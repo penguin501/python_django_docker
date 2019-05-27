@@ -24,7 +24,7 @@ docker-composeとdockerfileによってボリュームを切っているので
 移動させる場合は適宜変更すること  
 
 ## デバックについて
-sshが必要、Dockerにapt-getでopen-ssh-serverを入れる  
+sshが必要、DockerFileにapt-getでopen-ssh-serverを入れる記述を追加  
 docker-compoesにportを開ける 3000:22 (ホスト:コンテナ)  
 
 またローカルライブラリーも合わせる必要があるので、仮想環境が望ましい  

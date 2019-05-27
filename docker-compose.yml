@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    image: mysql/mysql-server:5.7
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_ROOT_HOST=%
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+  python:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./workdir:/code
+    expose:
+      - "8000"
+    depends_on:
+      - db
+  nginx:
+    build: build/nginx
+    volumes:
+      - ./workdir:/code
+    ports:
+        - '${WEB_HOST}:80'
+    depends_on:
+        - python
+        - db

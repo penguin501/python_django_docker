@@ -2,9 +2,9 @@
 # Docker版テスト環境構築手順
 
 ## 必須アプリ(winもmacも)
-docker
-docker-compose 
-お好きなエディタ
+・docker
+・docker-compose 
+・お好きなエディタ
 
 ## 組み立て方
 1. 初めからプロジェクトを作る場合は下にあるオリジナル手順を実施（英語）
@@ -24,6 +24,7 @@ docker-composeとdockerfileによってボリュームを切っているので
 ## デバックについて
 sshが必要、Dockerにapt-getでopen-ssh-serverを入れる
 docker-compoesにportを開ける 3000:22 (ホスト:コンテナ)
+
 またローカルライブラリーも合わせる必要があるので、仮想環境が望ましい
 （djangoやDB系のライブラリが必要）
 

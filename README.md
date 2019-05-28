@@ -33,3 +33,34 @@ docker-compoesにportを開ける 3000:22 (ホスト:コンテナ)
 
 original git
 https://github.com/pedroresende/docker-django
+
+## DB設定
+workdir配下のdjangoプロジェクトのsetting.pyにDB設定項目があり、  
+その値をmysqlに登録する  
+  
+コンテナを起動した後
+```
+docker exec -it <コンテナ名> mysql -uroot -p
+```
+  
+CRMがアクセスするユーザを作成する  
+crmdev  
+```
+CREATE USER 'crmdev'@'%' IDENTIFIED BY 'crmdev';
+GRANT ALL ON djangocrmtest.* TO 'crmdev'@'%' IDENTIFIED BY 'crmdev';
+FLUSH PRIVILEGES;
+```
+  
+ログインを確認する  
+```
+docker exec -it <コンテナ名> mysql -ucrmdev -p
+```
+
+pythonコンテナよりmigrateを実行する  
+```
+docker exec -it <コンテナ名> python manage.py migrate
+```
+
+## static設定
+nginxディレクトリ配下のdjangoファイルにaliasとして稼動時に存在するstaticパスを入れる
+adminは同時に登録できない？（aliasを複数切れない）

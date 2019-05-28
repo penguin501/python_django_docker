@@ -7,13 +7,16 @@ services:
       - MYSQL_DATABASE=${MYSQL_DB_NAME}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_ROOT_HOST=%
+      - MYSQL_USER='crmdev' 
+      - MYSQL_PASSWORD='crmdev'
     ports:
-      - "${MYSQL_PORT}:3306"
+      # - "${MYSQL_PORT}:3306"
+      - "3306:3306"
     volumes:
       - ./mysql:/var/lib/mysql
   python:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000 --settings=crmproject.settings_local
     volumes:
       - ./workdir:/code
     expose:

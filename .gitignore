@@ -35,6 +35,7 @@ vnev/
 env/
 mysql/
 .vscode/
+.devcontainer.json
  
 # Rope project settings
 .project

@@ -30,7 +30,9 @@ docker-compoesにportを開ける 3000:22 (ホスト:コンテナ)
 またローカルライブラリーも合わせる必要があるので、仮想環境が望ましい  
 （djangoやDB系のライブラリが必要)  
   
-
+vscodeではプラグインのRemote - Containersを入れるだけ  
+https://qiita.com/MasanoriIwakura/items/e7a2045b2de28c76ccd9  
+  
 original git
 https://github.com/pedroresende/docker-django
 

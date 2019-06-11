@@ -1,0 +1,10 @@
+Django==2.1.8
+# mod-wsgi==4.6.5
+PyMySQL==0.9.3
+pytz==2019.1
+django-bootstrap4==0.0.8
+django-jet==1.0.8
+django-tinymce4-lite==1.7.5
+gunicorn==19.9.0
+jsmin==2.2.2
+sqlparse==0.3.0

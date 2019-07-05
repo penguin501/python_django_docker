@@ -1,0 +1,24 @@
+[
+  '{{repeat(5, 1000)}}',
+  {
+    "model": "crmreception.M_CUSTOMER",
+    "PK": 1,
+    "fields":{
+    CUSTOMER_NO: '{{index()}}',
+    CUSTOMER_ID: 'E{{index("0000000")}}',
+    CUSTOMER_FIRST_NAME: '{{firstName()}}',
+    CUSTOMER_LAST_NAME: '{{surname()}}',
+    CUSTOMER_FIRST_NAME_KANA: '{{firstName()}}',
+    CUSTOMER_LAST_NAME_KANA: '{{surname()}}',
+    TELEPHONE_NO_1: '{{phone("090-xxxx-xxxx")}}',
+    TELEPHONE_NO_2: '{{phone("080-xxxx-xxxx")}}',
+    MAIL_ADDRESS_1: '{{email()}}',
+    MAIL_ADDRESS_2: '{{email()}}',
+    AFFILIATION: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    REGIST_DATETIME: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}',
+    UPDATE_DATETIME: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}',
+    DELETE_FLG: '0'
+    }
+  }
+]
+

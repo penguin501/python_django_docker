@@ -2,8 +2,9 @@ server {
     server_name localhost;
 
     location /static/ {
-        autoindex off;
+        autoindex on;
         alias /code/static/;
+        
     }
 
     location / {

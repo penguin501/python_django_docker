@@ -1,4 +1,4 @@
-Django==2.1.8
+Django~=2.1.10
 # mod-wsgi==4.6.5
 PyMySQL==0.9.3
 pytz==2019.1
@@ -8,3 +8,4 @@ django-tinymce4-lite==1.7.5
 gunicorn==19.9.0
 jsmin==2.2.2
 sqlparse==0.3.0
+django-debug-toolbar==1.11

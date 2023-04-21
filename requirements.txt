@@ -7,6 +7,6 @@ django-jet==1.0.8
 django-tinymce4-lite==1.7.5
 gunicorn==19.9.0
 jsmin==2.2.2
-sqlparse==0.3.0
+sqlparse==0.4.4
 django-debug-toolbar==1.11.1
 mojimoji
